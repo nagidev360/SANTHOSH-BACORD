@@ -21,7 +21,7 @@ window.__mobileActivate=async function(){
     if(d.success){
       localStorage.setItem('nagi_license_v1',JSON.stringify({key,product:d.license.product,expiry:d.license.expiry_date,activation_id:d.license.activation_id,status:'ACTIVE'}));
       msg.textContent='License activated successfully. Opening app...';
-      setTimeout(()=>location.reload(),300);
+      if(typeof window.openApp==='function') window.openApp(); else setTimeout(()=>location.reload(),300);
     }else{
       msg.textContent=(d.error&&d.error.message)||d.status||'Activation failed.';
       btn.disabled=false;btn.textContent='ACTIVATE';
