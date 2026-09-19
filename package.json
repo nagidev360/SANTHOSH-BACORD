@@ -1,5 +1,5 @@
 {
   "name":"santhosh-barcode-gen","version":"1.0.0","private":true,"type":"module",
-  "scripts":{"start":"node server.js","dev":"node --watch server.js"},
+  "scripts":{"start":"node server.js","dev":"node --watch server.js","build":"node --check server.js && node --check public/app.js"},
   "engines":{"node":">=20"},"dependencies":{"dotenv":"^16.6.1","express":"^5.1.0"}
 }
