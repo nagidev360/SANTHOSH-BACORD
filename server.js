@@ -64,7 +64,7 @@ app.get('/api/license/session',async(req,res)=>{
       setCookie(res,'nagi_device_id','',0);
       return res.status(401).json(x.data);
     }
-    x.data.license={...(x.data.license||{}),key};
+    x.data.license={...(x.data.license||{})};
     return res.json(x.data);
   }catch{
     return res.status(503).json({success:false,status:'SESSION_CHECK_FAILED'});
